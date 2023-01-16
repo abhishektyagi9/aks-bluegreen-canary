@@ -14,11 +14,11 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: demogaurav.azurecr.io
-  ACR_REPO_NAME: demogaurav.azurecr.io/docker-java-app
+  ACR_NAME: registryk8demo01.azurecr.io
+  ACR_REPO_NAME: registryk8demo01.azurecr.io/blue-nginx:1
   ARTIFACT_NAME: docker-java-app
-  RESOURCE_GROUP: Gaurav-RG
-  AKS_CLUSTER_NAME: Gaurav-AKS-cluster
+  RESOURCE_GROUP: rg-github-k8
+  AKS_CLUSTER_NAME: k8githunactiondemo
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
