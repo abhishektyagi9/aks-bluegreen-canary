@@ -15,8 +15,6 @@ on:
 
 env:
   ACR_NAME: registryk8demo01.azurecr.io
-  ACR_REPO_NAME: registryk8demo01.azurecr.io/blue-nginx:1
-  ARTIFACT_NAME: docker-java-app
   RESOURCE_GROUP: rg-github-k8
   AKS_CLUSTER_NAME: k8githunactiondemo
   
@@ -83,7 +81,7 @@ jobs:
             ./kubernetes/service.yaml
             ./kubernetes/green-deploy.yaml
           images: |
-            demogaurav.azurecr.io/green-nginx:1
+            registryk8demo01.azurecr.io/green-nginx:1
           strategy: blue-green
           traffic-split-method: pod
           action: promote  #deploy is the default; we will later use this to promote/reject
@@ -97,7 +95,7 @@ jobs:
             ./kubernetes/service.yaml
             ./kubernetes/blue-deploy.yaml
           images: |
-            demogaurav.azurecr.io/green-nginx:1
+            registryk8demo01.azurecr.io/green-nginx:1
           strategy: blue-green
           traffic-split-method: pod
           action: reject  #deploy is the default; we will later use this to promote/reject
